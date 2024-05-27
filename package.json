@@ -1,6 +1,6 @@
 {
   "name": "@convergence.engineering/linkedom-ts",
-  "version": "0.18.0",
+  "version": "1.18.0",
   "description": "A triple-linked lists based DOM implementation",
   "main": "./cjs/index.js",
   "types": "./types/ts/index.d.ts",
