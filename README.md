@@ -1,8 +1,8 @@
-# 🔗 linkedom
+# 🔗 @convergence.engineering/linkedom-ts
 
-[![Downloads](https://img.shields.io/npm/dm/linkedom.svg)](https://www.npmjs.com/package/linkedom) [![Build Status](https://travis-ci.com/WebReflection/linkedom.svg?branch=main)](https://travis-ci.com/WebReflection/linkedom) [![Coverage Status](https://coveralls.io/repos/github/WebReflection/linkedom/badge.svg?branch=main)](https://coveralls.io/github/WebReflection/linkedom?branch=main)
+[![Downloads](https://img.shields.io/npm/dm/linkedom-ts.svg)](https://www.npmjs.com/package/linkedom-ts) [![Build Status](https://travis-ci.com/convergence.engineering/linkedom-ts.svg?branch=main)](https://travis-ci.com/convergence.engineering/linkedom-ts) [![Coverage Status](https://coveralls.io/repos/github/convergence.engineering/linkedom-ts/badge.svg?branch=main)](https://coveralls.io/github/convergence.engineering/linkedom-ts?branch=main)
 
-<sup>**Social Media Photo by [JJ Ying](https://unsplash.com/@jjying) on [Unsplash](https://unsplash.com/)**</sup>
+Cloned and modified from https://github.com/WebReflection/linkedom to work with TypeScript by removing `@implements globalThis.*` from all exports.
 
 ### This is not a crawler!
 
@@ -10,10 +10,10 @@ LinkeDOM is a [triple-linked list](#data-structure) based DOM-like namespace, fo
 
   * **avoid** maximum callstack/recursion or **crashes**, even under heaviest conditions.
   * guarantee **linear performance** from small to big documents.
-  * be **close to the** current **DOM standard**, but [not too close](https://github.com/WebReflection/linkedom#faq).
+  * be **close to the** current **DOM standard**, but [not too close](https://github.com/convergence.engineering/linkedom-ts#faq).
 
 ```js
-import {DOMParser, parseHTML} from 'linkedom';
+import {DOMParser, parseHTML} from '@convergence.engineering/linkedom-ts';
 
 // Standard way: text/html, text/xml, image/svg+xml, etc...
 // const document = (new DOMParser).parseFromString(html, 'text/html');
@@ -63,11 +63,11 @@ document.querySelectorAll('form, input[name], button');
 
 ### What's New
 
-  * in `v0.11` a new `linkedom/worker` export has been added. This works with [deno](https://deno.land/), Web, and Service Workers, and it's not strictly coupled with NodeJS. Please note, this export does not include `canvas` module, and the `performance` is retrieved from the `globalThis` context.
+  * in `v0.11` a new `@convergence.engineering/linkedom-ts/worker` export has been added. This works with [deno](https://deno.land/), Web, and Service Workers, and it's not strictly coupled with NodeJS. Please note, this export does not include `canvas` module, and the `performance` is retrieved from the `globalThis` context.
 
 ### Serializing as JSON
 
-*LinkeDOM* uses a blazing fast [JSDON serializer](https://github.com/WebReflection/jsdon#readme), and nodes, as well as whole documents, can be retrieved back via `parseJSON(value)`.
+*LinkeDOM* uses a blazing fast [JSDON serializer](https://github.com/import {DOMParser, parseHTML} from '@convergence.engineering/linkedom-ts';/jsdon#readme), and nodes, as well as whole documents, can be retrieved back via `parseJSON(value)`.
 
 ```js
 // any node can be serialized
@@ -254,7 +254,7 @@ This structure also allows programs to avoid issues such as "*Maximum call stack
 
 ### Are *childNodes* and *children* always computed?
 
-As everything is a `while(...)` loop away, by default this module does not cache anything, specially because caching requires state invalidation for each container, returned queries, and so on. However, you can import `linkedom/cached` instead, as long as you [understand its constraints](https://github.com/WebReflection/linkedom#cached-vs-not-cached).
+As everything is a `while(...)` loop away, by default this module does not cache anything, specially because caching requires state invalidation for each container, returned queries, and so on. However, you can import `@convergence.engineering/linkedom-ts/cached` instead, as long as you [understand its constraints](https://github.com/convergence.engineering/linkedom-ts#cached-vs-not-cached).
 
 
 ## Parsing VS Node Types
@@ -275,7 +275,7 @@ Everything else, at least for the time being, is considered *YAGNI*, and it won'
 
 ## Cached VS Not Cached
 
-This module exports both `linkedom` and `linkedom/cached`, which are basically the exact same thing, except the cached version outperforms `linkedom` in these scenarios:
+This module exports both `@convergence.engineering/linkedom-ts` and `@convergence.engineering/linkedom-ts/cached`, which are basically the exact same thing, except the cached version outperforms `@convergence.engineering/linkedom-ts` in these scenarios:
 
   * the document, or any of its elements, are rarely changed, as opposite of frequently mutated or manipulated
   * the use-case needs many repeated *CSS* selectors, over a sporadically mutated "*tree*"
@@ -295,7 +295,7 @@ On the other hand, the basic, *non-cached*, module, grants the following:
 To run the benchmark locally, please follow these commands:
 
 ```sh
-git clone https://github.com/WebReflection/linkedom.git
+git clone https://github.com/@convergence.engineering/linkedom-ts.git
 
 cd linkedom/test
 npm i
