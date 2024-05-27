@@ -1,5 +1,5 @@
 {
-  "name": "linkedom",
+  "name": "@convergence.engineering/linkedom-ts",
   "version": "0.18.0",
   "description": "A triple-linked lists based DOM implementation",
   "main": "./cjs/index.js",
@@ -75,10 +75,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WebReflection/linkedom.git"
+    "url": "git+https://github.com/convergence.engineering/linkedom-ts.git"
   },
   "bugs": {
-    "url": "https://github.com/WebReflection/linkedom/issues"
+    "url": "https://github.com/convergence.engineering/linkedom-ts/issues"
   },
-  "homepage": "https://github.com/WebReflection/linkedom#readme"
+  "homepage": "https://github.com/convergence.engineering/linkedom-ts#readme"
 }
