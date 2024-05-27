@@ -3,7 +3,7 @@
   "version": "0.18.0",
   "description": "A triple-linked lists based DOM implementation",
   "main": "./cjs/index.js",
-  "types": "./types/index.d.ts",
+  "types": "./types/ts/index.d.ts",
   "scripts": {
     "benchmark": "node test/benchmark/linkedom.js",
     "benchmark:w3c": "node test/benchmark/linkedom.js --w3c; node test/benchmark/linkedom-cached.js --w3c; node test/benchmark/jsdom.js --w3c; node test/benchmark/basichtml.js --w3c",
@@ -44,12 +44,12 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./types/esm/index.d.ts",
+      "types": "./types/ts/index.d.ts",
       "import": "./esm/index.js",
       "default": "./cjs/index.js"
     },
     "./cached": {
-      "types": "./types/esm/index.d.ts",
+      "types": "./types/ts/index.d.ts",
       "import": "./esm/cached.js",
       "default": "./cjs/cached.js"
     },
@@ -59,10 +59,10 @@
   "typesVersions": {
     "*": {
       "cached": [
-        "./types/esm/index.d.ts"
+        "./types/ts/index.d.ts"
       ],
       "worker": [
-        "./types/esm/index.d.ts"
+        "./types/ts/index.d.ts"
       ]
     }
   },
